@@ -414,7 +414,7 @@ int main()
 	vector<string> v433 = { "AACCGGTA", "AACCGCTA", "AAACGGTA" };
 	cout << "\n the minimum mutations is: " << tempS.minMutation(s433_1, s433_2, v433);
 
-	int size = v433.size();
+	int size = (int)v433.size();
 	auto it433 = v433.begin();
 	for (int i = 0; i < size; i++)
 		it433 = v433.erase(it433);
@@ -622,10 +622,10 @@ int main()
 	std::hash<string> testHash;
 	cout << "Hash value of ABCD: " << testHash("ABCDEFGHIJKLMNOPQRSGUVWXYZ");
 	
-	int t0304 = testHash("ABCDEFGHIJKLMNOPQRSGUVWXYZ");
+	int t0304 = (int)testHash("ABCDEFGHIJKLMNOPQRSGUVWXYZ");
 	cout << "\n Hash value of ABCDEFGHIJKLMNOPQRSGUVWXYZ (int): " << t0304;
 
-	long t0304l = testHash("ABCDEFGHIJKLMNOPQRSGUVWXYZ");
+	long t0304l = (long)testHash("ABCDEFGHIJKLMNOPQRSGUVWXYZ");
 	cout << "\n Hash value of ABCDEFGHIJKLMNOPQRSGUVWXYZ (long): " << t0304l;
 
 	long long t0304ll = testHash("ABCDEFGHIJKLMNOPQRSGUVWXYZ");
@@ -832,9 +832,9 @@ int main()
 	testofset.insert("5");
 	for (auto it = testofset.begin(); it != testofset.end(); it++) {
 		string strtestofset = *it;
-		int i = testofset.size();
+		int i = (int)testofset.size();
 //		testofset.erase(it);
-		i = testofset.size();
+		i = (int)testofset.size();
 	}
 
 	//127. Word Ladder 

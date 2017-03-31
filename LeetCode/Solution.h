@@ -1058,6 +1058,9 @@ public:
 	int nthSuperUglyNumber(int n, vector<int>& primes);
 	void test313();
 
+	//test github
+	int TestGitHub();
+
 	//end
 	void end();
 	enum DismLogLevel

@@ -930,7 +930,7 @@ uint32_t Solution::reverseBits(uint32_t n) {
 //171
 int Solution::titleToNumber(string s) {
 	int res = 0;
-	for (int i = s.size() - 1; i >= 0; i--)
+	for (int i = (int)s.size() - 1; i >= 0; i--)
 		res += (s[i] - 'A' + 1) * (int)pow(26, s.size() - 1 - i);
 
 	return res;
@@ -939,7 +939,7 @@ int Solution::titleToNumber(string s) {
 //169
 int Solution::majorityElement(vector<int>& nums) {
 	map<int, int> m;
-	int n = nums.size();
+	int n = (int)nums.size();
 
 	for (int i = 0; i < n; i++)
 	{
@@ -1031,25 +1031,25 @@ vector<vector<int>> Solution::generate(int numRows) {
 //58 test case -> " a  b   ";
 int Solution::lengthOfLastWord(string s) {
 	int pos = -1;
-	int n = s.size();
+	int n = (int)s.size();
 	while (s[n - 1] == ' ')
 	{
 		s.pop_back();
 		n = n - 1;
 	}
 
-	n = s.size();
+	n = (int)s.size();
 	for (int i = 0; i < n; i++)
 		if (s[i] == ' ') pos = i;
 	if (pos < 0)
-		return s.size();
+		return (int)s.size();
 	else
-		return s.size() - (pos + 1);
+		return (int)s.size() - (pos + 1);
 }
 
 //66
 vector<int> Solution::plusOne(vector<int>& digits) {
-	int m = digits.size();
+	int m = (int)digits.size();
 	vector<int> res(m + 1);
 	res[0] = 0;
 	int carry = 0;
@@ -1080,8 +1080,8 @@ vector<int> Solution::plusOne(vector<int>& digits) {
 //67
 string Solution::addBinary(string a, string b) {
 	if (a.size() < b.size()) a.swap(b);
-	int m = a.size();
-	int n = b.size();
+	int m = (int)a.size();
+	int n = (int)b.size();
 	if (m == 0) return b;
 	if (n == 0) return a;
 	string res;
@@ -1291,7 +1291,7 @@ int Solution::maxProfit(vector<int>& prices) {
 
 //123. Best Time to Buy and Sell Stock III
 int Solution::maxProfit123(vector<int>& prices) {
-	int n = prices.size();
+	int n = (int)prices.size();
 	vector<int> first(n, 0);
 	vector<int> second(n, 0);
 
@@ -1351,7 +1351,7 @@ string Solution::countAndSay(int n) {
 
 //376. Wiggle Subsequence
 int Solution::wiggleMaxLength376(vector<int>& nums) {
-	int n = nums.size();
+	int n = (int)nums.size();
 	if (n < 2) return n;
 
 	int preDif, dif;
@@ -1417,7 +1417,7 @@ void Solution::testVector(vector<int> v,int i)
 
 //108. Convert Sorted Array to Binary Search Tree
 Solution::TreeNode* Solution::sortedArrayToBST(vector<int>& nums) {
-	return sortedArrayToBST(0, nums.size() - 1, nums);
+	return sortedArrayToBST(0, (int)nums.size() - 1, nums);
 }
 
 Solution::TreeNode* Solution::sortedArrayToBST(int left, int right, vector<int>& nums)
@@ -1530,7 +1530,7 @@ vector<int> Solution::postorderTraversal(TreeNode* root) {
 
 //105. Construct Binary Tree from Preorder and Inorder Traversal
 Solution::TreeNode* Solution::buildTree105(vector<int>& preorder, vector<int>& inorder) {
-	return buildTree105(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1);
+	return buildTree105(preorder, 0, (int)preorder.size() - 1, inorder, 0, (int)inorder.size() - 1);
 }
 
 Solution::TreeNode* Solution::buildTree105(vector<int>& preorder, int begin1, int end1, vector<int>& inorder, int begin2, int end2) 
@@ -1558,7 +1558,7 @@ Solution::TreeNode* Solution::buildTree105(vector<int>& preorder, int begin1, in
 
 //106. Construct Binary Tree from Inorder and Postorder Traversal
 Solution::TreeNode* Solution::buildTree(vector<int>& inorder, vector<int>& postorder) {
-	return buildTree(inorder, 0, inorder.size() - 1, postorder, 0, postorder.size() - 1);
+	return buildTree(inorder, 0, (int)inorder.size() - 1, postorder, 0, (int)postorder.size() - 1);
 }
 
 Solution::TreeNode* Solution::buildTree(vector<int>& inorder, int begin1, int end1, vector<int>& postorder, int begin2, int end2)
@@ -1615,8 +1615,8 @@ string Solution::addStrings(string num1, string num2) {
 
 	if (num2.size() == 0) return num1;
 
-	int m = num1.size();
-	int n = num2.size();
+	int m = (int)num1.size();
+	int n = (int)num2.size();
 
 	int carry = 0;
 
@@ -1736,7 +1736,7 @@ pair<int, int> Solution::VMWareFlip(string s)
 vector<int> Solution::countSmaller(vector<int>& nums) {
 	BST* root = nullptr;
 	vector<int> res(nums.size());
-	for (int i = nums.size() - 1; i >= 0; i--)
+	for (int i = (int)nums.size() - 1; i >= 0; i--)
 		res[i] = insertBST(root, nums[i]);
 	return res;
 }
@@ -1810,7 +1810,7 @@ bool Solution::find(int value) {
 //167. Two Sum II - Input array is sorted  
 vector<int> Solution::twoSum(vector<int>& numbers, int target) {
 	int l = 0;
-	int r = numbers.size() - 1;
+	int r = (int)numbers.size() - 1;
 	while (l < r) {
 		if (numbers[l] + numbers[r] == target) {
 			vector<int> res{ l + 1,r + 1 };
@@ -1938,7 +1938,7 @@ int Solution::lengthOfLongestSubstring(string s) {
 
 //5. Longest Palindromic Substring
 string Solution::longestPalindrome(string s) {
-	int len = s.size();
+	int len = (int)s.size();
 	if (len < 2) return s;
 
 	int minPos = 0, maxLen = 1;
@@ -1966,7 +1966,7 @@ string Solution::longestPalindrome(string s) {
 vector<vector<int>> Solution::threeSum(vector<int>& nums) {
 	vector<vector<int>> triples;
 	sort(nums.begin(), nums.end());
-	int i = 0, last = nums.size() - 1;
+	int i = 0, last = (int)nums.size() - 1;
 	while (i < last) {
 		int a = nums[i], j = i + 1, k = last;
 		while (j < k) {
@@ -2061,7 +2061,7 @@ int Solution::minMutation(string start, string end, vector<string>& bank) {
 }
 
 bool Solution::isMutation(string m, string n) {
-	int size = m.size();
+	int size = (int)m.size();
 	if (size != n.size()) return false;
 
 	int count = 0;
@@ -2169,7 +2169,7 @@ void Solution::TicTacToe(int n) {
 
 //186. Reverse Words in a String II
 void Solution::reverseWords2(string &s) {
-	int n = s.size();
+	int n = (int)s.size();
 	reverse(s.begin(), s.end());
 	for (int i = 0, j = 0; i <= n; i++)
 		if (i == n || s[i] == ' ') {
@@ -2240,7 +2240,7 @@ Solution::ListNode* Solution::sortList_rec(ListNode* head) {
 
 //75. Sort Colors
 void Solution::sortColors(vector<int>& nums) {
-	sortColors(nums, 0, nums.size() - 1);
+	sortColors(nums, 0, (int)nums.size() - 1);
 }
 void Solution::sortColors(vector<int>& nums, int left, int right) {
 	if (left <= right)
@@ -7426,6 +7426,11 @@ return set<int>();
 		return uglyNumbers[n - 1];
 	}
 
+	int Solution::TestGitHub() {
+		minstd_rand0 generator((unsigned int)time(NULL));
+		
+		return generator() % 1000;
+	}
 // end
 void Solution::end() {
 
