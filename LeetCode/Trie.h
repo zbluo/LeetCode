@@ -15,7 +15,7 @@ public:
 		string ans = "";
 		if (str1.empty() || str2.empty())
 			return ans;
-		int n = str1.size(), m = str2.size();
+		int n = (int)str1.size(), m = (int)str2.size();
 		for (int i = 0; i < n; i++)
 			longestSubStr(str1.substr(i, n - i), true, ans);
 		for (int i = 0; i < m; i++)
