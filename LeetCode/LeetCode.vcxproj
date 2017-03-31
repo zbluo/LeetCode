@@ -145,17 +145,29 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Solution.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="systemdesign_cards.h" />
+    <ClInclude Include="systemdesign_ro.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Trie.h" />
+    <ClInclude Include="TrieNode.h" />
+    <ClInclude Include="tweet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LeetCode.cpp" />
+    <ClCompile Include="Solution.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="systemdesign_cards.cpp" />
+    <ClCompile Include="systemdesign_ro.cpp" />
+    <ClCompile Include="Trie.cpp" />
+    <ClCompile Include="TrieNode.cpp" />
+    <ClCompile Include="tweet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
