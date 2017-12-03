@@ -1173,3 +1173,40 @@ class MulInheritanceDerived_D1 : public MulInheritanceDerived_B1, public  MulInh
 public:
 	int D() { return 3; }
 };
+
+// Interpolation search
+/*
+Average time complexity: O(log logn)
+Worst time complexity: O(n);
+Using big-O notation, the performance of the interpolation algorithm on a data set of size n is O(n);
+however under the assumption of a uniform distribution of the data on the linear scale used for interpolation,
+the performance can be shown to be O(log log n).
+However, Dynamic Interpolation Search is possible in o(log log n) time using a novel data structure.
+
+T must implement the operators -, !=, ==, >=, <= and <
+such that >=, <=, !=, == and < define a total order on T and
+such that
+(tm - tl) * k / (th - tl)
+is an int between 0 and k (inclusive) for any tl, tm, th in T with tl <= tm <= th, tl != th.
+arr must be sorted according to this ordering.
+\returns An index i such that arr[i] == key or -1 if there is no i that satisfies this.
+*/
+template <class T>
+T Interpolation_Search(vector<T> nums, T key) {
+	int size = (int)nums.size();
+	int low = 0, high = size - 1;
+	while ((nums[high] != nums[low]) && (key >= nums[low]) && (key <= nums[high])) {
+		int mid = low + (high - low) * (key - nums[low]) / (nums[high] - nums[low]);
+		if (nums[mid] > key)
+			high = mid - 1;
+		else if (nums[mid] < key)
+			low = mid + 1;
+		else
+			return mid;
+	}
+
+	if (nums[low] == key)
+		return low;
+	else
+		return -1;
+}

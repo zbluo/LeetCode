@@ -1094,6 +1094,10 @@ int main()
 	//313. Super Ugly Number
 	tempS.test313();
 
+	//Interpolation search
+	vector<int> testInterSearch = { 1, 2, 2, 4, 5 };
+	cout << "\nInterpolation search result: " << Interpolation_Search(testInterSearch, 4);
+
 	gets_s(c);
 	gets_s(c);
 	gets_s(c);

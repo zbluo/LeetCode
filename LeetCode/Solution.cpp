@@ -3,6 +3,7 @@
 
 static int testofstatic3 = 0;
 
+// test only
 Solution::Solution()
 {
 	testofstatic3 = 1;
@@ -1983,7 +1984,7 @@ vector<vector<int>> Solution::threeSum(vector<int>& nums) {
 //18. 4Sum
 vector<vector<int>> Solution::fourSum(vector<int>& nums, int target) {
 	vector<vector<int>> res;
-	int n = nums.size();
+	int n = (int) nums.size();
 	if (n < 4) return res;
 
 	sort(nums.begin(), nums.end());
@@ -2043,7 +2044,7 @@ int Solution::minMutation(string start, string end, vector<string>& bank) {
 
 		if (str1 == end) return steps;
 
-		int size = tmpS.size();
+		int size = (int)tmpS.size();
 		auto it = tmpS.begin();
 		for (int i = 0; i < size; i++) {
 			if (isMutation(str1, (*it).gen)) {
@@ -2265,10 +2266,10 @@ void Solution::sortColors(vector<int>& nums, int left, int right) {
 // Given a 2d grid map of '1's(land) and '0's(water), count the number of islands.An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically.You may assume all four edges of the grid are all surrounded by water.
 int Solution::numIslands(vector<vector<char>>& grid) {
 	int count = 0;
-	int n = grid.size();
+	int n = (int)grid.size();
 	if (n == 0)
 		return count;
-	int m = grid[0].size();
+	int m = (int)grid[0].size();
 
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++)
@@ -2371,7 +2372,7 @@ Solution::TreeNode* Solution::deserialize(istringstream& in) {
 
 	//268. Missing Number 
 	int Solution::missingNumber(vector<int>& nums) {
-		int sum = nums.size();
+		int sum = (int)nums.size();
 
 		for (int i = 0; i < (int)nums.size(); i++)
 			sum += i - nums[i];
@@ -2428,10 +2429,10 @@ Solution::TreeNode* Solution::deserialize(istringstream& in) {
 	//73. Set Matrix Zeroes
 	void Solution::setZeroes(vector<vector<int>>& matrix) {
 		bool col0 = false;
-		int rows = matrix.size();
+		int rows = (int)matrix.size();
 		if (rows == 0)
 			return;
-		int cols = matrix[0].size();
+		int cols = (int)matrix[0].size();
 
 		for (int i = 0; i < rows; i++) {
 			if (matrix[i][0] == 0)
@@ -2821,7 +2822,7 @@ string Solution::simplifyPath(string path) {
 
 //165. Compare Version Numbers
 int Solution::compareVersion(string version1, string version2) {
-	int n1 = version1.size(), n2 = version2.size();
+	int n1 = (int)version1.size(), n2 = (int)version2.size();
 	for (int i = 0, j = 0; i < n1 || j < n2; i++, j++) {
 		int num1 = 0, num2 = 0;
 		while (i < n1 && version1[i] != '.')
@@ -2859,7 +2860,7 @@ void Solution::extraction(string s, vector<int>& v) {
 //91. Decode Ways
 //Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12). 
 int Solution::numDecodings(string s) {
-	int n = s.size();
+	int n = (int)s.size();
 	if (n == 0)
 		return 0;
 
@@ -2879,7 +2880,7 @@ int Solution::numDecodings(string s) {
 //125. Valid Palindrome
 bool Solution::isPalindrome(string s) {
 
-	for (int left = 0, right = s.size() - 1; left < right; left++, right--) {
+	for (int left = 0, right = (int)(s.size() - 1); left < right; left++, right--) {
 		while (left < right && isalnum(s[left]) == false)
 			left++;
 		while (left < right && isalnum(s[right]) == false)
@@ -3000,7 +3001,7 @@ vector<vector<string>> Solution::groupStrings(vector<string>& strings) {
 
 string Solution::shift(string& s) {
 	string t = "";
-	int n = s.length();
+	int n = (int)s.length();
 	if (n == 0)
 		return "A";
 	for (int i = 1; i < n; i++) {
@@ -3022,7 +3023,7 @@ vector<vector<int>> Solution::subsets(vector<int>& nums) {
 	
 
 	for (int i = 0; i < (int)nums.size(); i++) {
-		int n = ans.size();
+		int n = (int)ans.size();
 		for (int j = 0; j < n; j++) {
 			ans.push_back(ans[j]);
 			ans.back().push_back(nums[i]);
@@ -3090,7 +3091,7 @@ int Solution::robIII(TreeNode* root) {
 	}
 	//Quick sort
 	void Solution::QuickSort(vector<int>& nums) {
-		QuickSort(nums, 0, nums.size() - 1);
+		QuickSort(nums, 0, (int)(nums.size() - 1));
 	}
 	void Solution::QuickSort(vector<int>& nums, int left, int right) {
 		if (left >= right)
@@ -3117,7 +3118,7 @@ int Solution::robIII(TreeNode* root) {
 	void Solution::MergeSort(vector<int>& nums) {
 		if (nums.empty())
 			return;
-		MergeSort(nums, 0, nums.size() - 1);
+		MergeSort(nums, 0, (int)(nums.size() - 1));
 	}
 
 	void Solution::MergeSort(vector<int>& nums, int left, int right) {
@@ -3194,8 +3195,8 @@ int Solution::robIII(TreeNode* root) {
 	vector<int> Solution::spiralOrder(vector<vector<int>>& matrix) {
 		vector<vector<int> > dirs{ { 0, 1 },{ 1, 0 },{ 0, -1 },{ -1, 0 } };
 		vector<int> res;
-		int nr = matrix.size();     if (nr == 0) return res;
-		int nc = matrix[0].size();  if (nc == 0) return res;
+		int nr = (int)matrix.size();     if (nr == 0) return res;
+		int nc = (int)matrix[0].size();  if (nc == 0) return res;
 
 		vector<int> nSteps{ nc, nr - 1 };
 
@@ -3286,7 +3287,7 @@ int Solution::robIII(TreeNode* root) {
 
 	// 53. Maximum Subarray
 	int Solution::maxSubArray(vector<int>& nums) {
-		int n = nums.size();
+		int n = (int)nums.size();
 
 		int max = nums[0];
 		int i = 0;
@@ -3311,10 +3312,10 @@ int Solution::robIII(TreeNode* root) {
 
 	//174. Dungeon Game
 	int Solution::calculateMinimumHP(vector<vector<int>>& dungeon) {
-		int rows = dungeon.size();
+		int rows = (int)dungeon.size();
 		if (rows == 0)
 			return 1;
-		int cols = dungeon[0].size();
+		int cols = (int)dungeon[0].size();
 		if (cols == 0)
 			return 1;
 
@@ -3346,7 +3347,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//33. Search in Rotated Sorted Array
 	int Solution::search(vector<int>& nums, int target) {
-		int n = nums.size(), lo = 0, hi = n - 1;
+		int n = (int)nums.size(), lo = 0, hi = n - 1;
 		// find the index of the smallest value using binary search.
 		// Loop will terminate since mid < hi, and lo or hi will shrink by at least 1.
 		// Proof by contradiction that mid < hi: if mid==hi, then lo==hi and loop would have been terminated.
@@ -3371,7 +3372,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//153. Find Minimum in Rotated Sorted Array
 	int Solution::findMin(vector<int>& nums) {
-		int n = nums.size(), lo = 0, hi = n - 1;
+		int n = (int)nums.size(), lo = 0, hi = n - 1;
 		// find the index of the smallest value using binary search.
 		// Loop will terminate since mid < hi, and lo or hi will shrink by at least 1.
 		// Proof by contradiction that mid < hi: if mid==hi, then lo==hi and loop would have been terminated.
@@ -3414,7 +3415,7 @@ int Solution::robIII(TreeNode* root) {
 	}
 
 	int Solution::findKthLargest(vector<int>& nums, int k) {
-		int n = nums.size();
+		int n = (int)nums.size();
 		int left = 0, right = n - 1;
 		while (true) {
 			int pos = partition215(nums, left, right);
@@ -3429,7 +3430,7 @@ int Solution::robIII(TreeNode* root) {
 		bitset<128> test(n);
 		test[0] = 1;
 		test[31] = 1;
-		return test.count();
+		return (int)test.count();
 		//        return bitset<32>(n).count();
 	}
 
@@ -3438,7 +3439,7 @@ int Solution::robIII(TreeNode* root) {
 	Solution::ListNode* Solution::mergeKLists23(vector<ListNode*>& lists) {
 		priority_queue<ListNode*, vector<ListNode*>, myComp23> heap;
 		ListNode dummy(0), *cur = &dummy;
-		int n = lists.size();
+		int n = (int)lists.size();
 		for (int i = 0; i < n; i++)
 			if (lists[i])
 				heap.push(lists[i]);
@@ -3562,7 +3563,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//55. Jump Game 
 	bool Solution::canJump(vector<int>& nums) {
-		int n = nums.size();
+		int n = (int)nums.size();
 		if (n == 0)
 			return true;
 
@@ -3674,11 +3675,11 @@ int Solution::robIII(TreeNode* root) {
 	vector<string> Solution::readBinaryWatch(int num) {
 		vector<int> hour[4], minute[6];
 		for (int i = 0; i < 12; i++) {
-			int n = bitset<4>(i).count();
+			int n = (int)(bitset<4>(i).count());
 			hour[n].push_back(i);
 		}
 		for (int i = 0; i < 60; i++) {
-			int n = bitset<6>(i).count();
+			int n = int(bitset<6>(i).count());
 			minute[n].push_back(i);
 		}
 
@@ -4012,7 +4013,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//457. Circular Array Loop
 	bool Solution::circularArrayLoop(vector<int>& nums) {
-		int n = nums.size();
+		int n = (int)nums.size();
 		for (int i = 0; i < n; i++) {
 			if (nums[i] == 0) {
 				continue;
@@ -4046,7 +4047,7 @@ int Solution::robIII(TreeNode* root) {
 	}
 
 	int Solution::getIndex(int i, vector<int>& nums) {
-		int n = nums.size();
+		int n = (int)nums.size();
 		return i + nums[i] >= 0 ? (i + nums[i]) % n : n + ((i + nums[i]) % n);
 	}
 
@@ -4070,7 +4071,7 @@ int Solution::robIII(TreeNode* root) {
 	bool Solution::wordBreak(string s, unordered_set<string>& wordDict) {
 		if (wordDict.size() == 0)
 			return false;
-		int n = s.size();
+		int n = (int)s.size();
 		vector<bool> dp(n + 1, false);
 		dp[0] = true;
 		for (int i = 1; i <= n; i++) {
@@ -4153,7 +4154,7 @@ int Solution::robIII(TreeNode* root) {
 		if (board.size() == 0 || board[0].size() == 0)
 			return 0;
 
-		int ans = 0, row = board.size(), col = board[0].size();
+		int ans = 0, row = (int)board.size(), col = (int)board[0].size();
 
 		for (int i = 0; i < row; i++)
 			for (int j = 0; j < col; j++)
@@ -4196,7 +4197,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//11. Container With Most Water Add to List 
 	int Solution::maxArea(vector<int>& height) {
-		int water = 0, i = 0, j = height.size() - 1;
+		int water = 0, i = 0, j = (int)(height.size() - 1);
 
 		while (i < j) {
 			int h = min(height[i], height[j]);
@@ -4214,7 +4215,7 @@ int Solution::robIII(TreeNode* root) {
 	//188. Best Time to Buy and Sell Stock IV 
 	int Solution::maxProfit_IV(int k, vector<int>& prices) {
 
-		int len = prices.size();
+		int len = (int)prices.size();
 
 		if (k >= len / 2)
 			return maxProfit_IV(prices);
@@ -4285,7 +4286,7 @@ int Solution::robIII(TreeNode* root) {
 	The above state equations can be turned into the following code directly.
 	*/
 	int Solution::minDistance(string word1, string word2) {
-		int m = word1.size(), n = word2.size();
+		int m = (int)word1.size(), n = (int)word2.size();
 		vector<int> dp(n + 1, 0);
 
 		for (int i = 0; i <= n; i++)
@@ -4405,7 +4406,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//42. Trapping Rain Water Add to List
 	int Solution::trap(vector<int>& height) {
-		int left = 0, right = height.size() - 1;
+		int left = 0, right = (int)(height.size() - 1);
 		int ans = 0, maxLeft = 0, maxRight = 0;
 
 		while (left < right) {
@@ -4450,7 +4451,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//461. Hamming Distance
 	int Solution::hammingDistance(int x, int y) {
-		return bitset<32>(x^y).count();
+		return (int)(bitset<32>(x^y).count());
 	}
 
 	//150. Evaluate Reverse Polish Notation Add to List
@@ -4485,7 +4486,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//115. Distinct Subsequences Add to List
 	int Solution::numDistinct(string s, string t) {
-		int row = t.size(), col = s.size();
+		int row = (int)t.size(), col = (int)s.size();
 		vector<vector<int>> dp(row + 1, vector<int>(col + 1, 0));
 
 		for (int j = 0; j < col; j++)
@@ -4503,10 +4504,10 @@ int Solution::robIII(TreeNode* root) {
 
 	//64. Minimum Path Sum Add to List
 	int Solution::minPathSum(vector<vector<int>>& grid) {
-		int row = grid.size();
+		int row = (int)grid.size();
 		if (row == 0)
 			return 0;
-		int col = grid[0].size();
+		int col = (int)grid[0].size();
 		if (col == 0)
 			return 0;
 
@@ -4544,7 +4545,7 @@ int Solution::robIII(TreeNode* root) {
 			}
 		}
 
-		int minLen = nums.size() / 3;
+		int minLen = (int)(nums.size() / 3);
 		vector<int> ans;
 		cx = 0;
 		cy = 0;
@@ -4670,7 +4671,7 @@ int Solution::robIII(TreeNode* root) {
 		if (nums.empty() || nums[0].empty())
 			return false;
 	    
-		int m = nums.size(), n = nums[0].size();
+		int m = (int)nums.size(), n = (int)nums[0].size();
 		if (m != n)
 			return false;
 	    
@@ -4840,7 +4841,7 @@ int Solution::robIII(TreeNode* root) {
 			if (it == res.end()) res.push_back(nums[i]);
 			else *it = nums[i];
 		}
-		return res.size();
+		return (int)res.size();
 	}
 
 	//452. Minimum Number of Arrows to Burst Balloons 
@@ -4874,7 +4875,7 @@ int Solution::robIII(TreeNode* root) {
 		int indicator = 1;
 		for (int i = 0; i<(int)str.size();)
 		{
-			i = str.find_first_not_of(' ');
+			i = (int)(str.find_first_not_of(' '));
 			if (str[i] == '-' || str[i] == '+')
 				indicator = (str[i++] == '-') ? -1 : 1;
 			while ('0' <= str[i] && str[i] <= '9')
@@ -4895,7 +4896,7 @@ int Solution::robIII(TreeNode* root) {
 			ans[i] = ans[i - 1] * nums[i - 1];
 
 		int pr = 1;
-		for (int i = nums.size() - 2; i >= 0; i--) {
+		for (int i = (int)(nums.size() - 2); i >= 0; i--) {
 			pr *= nums[i + 1];
 			ans[i] = ans[i] * pr;
 		}
@@ -4905,7 +4906,7 @@ int Solution::robIII(TreeNode* root) {
 
 	//162. Find Peak Element 
 	int Solution::findPeakElement(vector<int>& nums) {
-		int left = 0, right = nums.size() - 1;
+		int left = 0, right = (int)(nums.size() - 1);
 
 		while (left < right) {
 			int mid = left + (right - left) / 2;
@@ -5021,7 +5022,7 @@ int Solution::robIII(TreeNode* root) {
 	So in situation <b> and <c>, we don't need to check whether j > 0 and whether j < n.
 	*/
 	double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-		int m = nums1.size(), n = nums2.size();
+		int m = (int)nums1.size(), n = (int)nums2.size();
 		if (m > n) return findMedianSortedArrays(nums2, nums1);
 		int minidx = 0, maxidx = m, i, j, num1, mid = (m + n + 1) / 2, num2;
 		while (minidx <= maxidx)
@@ -5106,7 +5107,7 @@ return set<int>();
 
 	//35. Search Insert Position 
 	int Solution::searchInsert(vector<int>& nums, int target) {
-		int left = 0, right = nums.size() - 1;
+		int left = 0, right = (int)(nums.size() - 1);
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 
@@ -5129,7 +5130,7 @@ return set<int>();
 		if (hashmap_380.find(val) != hashmap_380.end())
 			return false;
 
-		hashmap_380[val] = v_380.size();
+		hashmap_380[val] = (int)v_380.size();
 		v_380.push_back(val);
 		return true;
 	}
@@ -5139,7 +5140,7 @@ return set<int>();
 		if (hashmap_380.find(val) == hashmap_380.end())
 			return false;
 
-		int last = v_380.size() - 1;
+		int last = (int)(v_380.size() - 1);
 		hashmap_380[v_380[last]] = hashmap_380[val];
 		v_380[hashmap_380[val]] = v_380[last];
 		v_380.pop_back();
@@ -5159,7 +5160,7 @@ return set<int>();
 	int Solution::longestPalindromeSubseq(string s) {
 		if (s.empty())
 			return 0;
-		int n = s.size();
+		int n = (int)s.size();
 		vector<vector<int>> dp(n, vector<int>(n, 0));
 		for (int i = n - 1; i >= 0; i--) {
 			dp[i][i] = 1;
@@ -5180,7 +5181,7 @@ return set<int>();
 		queue<string> q;
 		q.push(beginWord);
 		for (int depth = 1; q.empty() == false; depth++) {
-			for (int size = q.size(); size > 0; size--) {
+			for (int size = (int)q.size(); size > 0; size--) {
 				string w = q.front();
 				q.pop();
 				if (w.compare(endWord) == 0) return depth;
@@ -5209,7 +5210,7 @@ return set<int>();
 	bool Solution::searchMatrix(vector<vector<int>>& matrix, int target) {
 		if (matrix.empty() || matrix[0].empty())
 			return false;
-		int col = matrix[0].size() - 1, row = 0;
+		int col = (int)(matrix[0].size() - 1), row = 0;
 		while (row < (int)matrix.size() && col >= 0) {
 			if (matrix[row][col] == target)
 				return true;
@@ -5277,7 +5278,7 @@ return set<int>();
 		q.push_back("");
 		for (auto d : digits) {
 			int id = d - '0';
-			for (int size = q.size(); size > 0; size--) {
+			for (int size = (int)q.size(); size > 0; size--) {
 				string str = q.front();
 				q.pop_front();
 				for (auto c : map[id])
@@ -5393,7 +5394,7 @@ return set<int>();
 	To check if the string is repeating itself, we just need the last entry to be non-zero and str.size() to divide (str.size()-last entry).
 	*/
 	bool Solution::repeatedSubstringPattern(string str) {
-		int i = 1, j = 0, n = str.size();
+		int i = 1, j = 0, n = (int)str.size();
 		vector<int> dp(n + 1, 0);
 		while (i < (int)str.size()) {
 			if (str[i] == str[j]) dp[++i] = ++j;
@@ -5427,7 +5428,7 @@ return set<int>();
 
 	//344. Reverse String 
 	string Solution::reverseString(string s) {
-		int i = 0, j = s.size() - 1;
+		int i = 0, j = (int)(s.size() - 1);
 		while (i < j) {
 			swap(s[i++], s[j--]);
 		}
@@ -5503,7 +5504,7 @@ return set<int>();
 		if (s.empty())
 			return 0;
 
-		int n = s.size();
+		int n = (int)s.size();
 		vector<vector<bool>> pal(n, vector<bool>(n, false));
 		vector<int> cut(n, 0);
 
@@ -5526,7 +5527,7 @@ return set<int>();
 	//76. Minimum Window Substring
 	string Solution::minWindow(string s, string t) {
 		vector<int> map(128, 0);
-		int counter = t.size(), begin = 0, end = 0, d = s.size(), head = 0;
+		int counter = (int)t.size(), begin = 0, end = 0, d = (int)s.size(), head = 0;
 		bool found = false;
 
 		// Statistic for count of char in t
@@ -5700,9 +5701,9 @@ return set<int>();
 		return max(left, right);
 		*/
 		if (s.empty() || k <= 1)
-			return s.size();
+			return (int)s.size();
 
-		return longestSubstring(s, 0, s.size() - 1, k);
+		return longestSubstring(s, 0, (int)(s.size() - 1), k);
 	}
 
 	int Solution::longestSubstring(string &s, int left, int right, int k) {
@@ -5752,7 +5753,7 @@ return set<int>();
 			hashmap[w]++;
 
 		vector<int> ans;
-		int len = words[0].size(), num = words.size(), n = s.size();
+		int len = (int)words[0].size(), num = (int)words.size(), n = (int)s.size();
 
 		for (int i = 0; i < n - num * len + 1; i++) {
 			unordered_map<string, int> count;
@@ -5777,7 +5778,7 @@ return set<int>();
 	//10. Regular Expression Matching
 	bool Solution::isMatch(string s, string p) {
 		vector<vector<bool>> dp(s.size() + 1, vector<bool>(p.size() + 1, false));
-		int m = s.size(), n = p.size();
+		int m = (int)s.size(), n = (int)p.size();
 		dp[0][0] = true;
 		for (int j = 2; j <= n; j++)
 			if (p[j - 1] == '*')
@@ -5899,7 +5900,7 @@ return set<int>();
 
 	//503. Next Greater Element II
 	vector<int> Solution::nextGreaterElements(vector<int>& nums) {
-		int n = nums.size();
+		int n = (int)nums.size();
 		vector<int> ans(n, -1);
 		stack<int> s;
 		for (int i = 0; i < 2 * n; i++) {
@@ -5922,7 +5923,7 @@ return set<int>();
 		map<int, int> m;
 		vector<int> ans;
 		stack<int> s;
-		int n = nums.size();
+		int n = (int)nums.size();
 
 		for (auto n : nums) {
 			while (!s.empty() && s.top() < n) {
@@ -5943,7 +5944,7 @@ return set<int>();
 
 	//214. Shortest Palindrome
 	string Solution::shortestPalindrome(string s) {
-		int len = s.length();
+		int len = (int)s.length();
 		if (len < 2)
 			return s;
 		// calculate the length of the longest palindromic prefix substring.
@@ -6173,7 +6174,7 @@ return set<int>();
 	}
 
 	bool Solution::Queens52(vector<vector<bool>> &board, int col, int &ans) {
-		int n = board.size();
+		int n = (int)board.size();
 		if (col >= n) {
 			ans++;
 			return true;
@@ -6214,7 +6215,7 @@ return set<int>();
 		if (nums1.empty() || nums2.empty())
 			return ans;
 
-		int index = 1, m = nums1.size(), n = nums2.size();
+		int index = 1, m = (int)nums1.size(), n = (int)nums2.size();
 		auto cmp = [&](pair<int, int> a, pair<int, int> b) {return (nums1[a.first] + nums2[a.second]) > (nums1[b.first] + nums2[b.second]); };
 		priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> heap(cmp);
 		heap.push(pair<int, int>(0, 0));
@@ -6461,7 +6462,7 @@ return set<int>();
 
 	//16. 3Sum Closest
 	int Solution::threeSumClosest(vector<int>& nums, int target) {
-		int size = nums.size();
+		int size = (int)nums.size();
 		if (size < 3)
 			return 0;
 
@@ -6535,13 +6536,13 @@ return set<int>();
 	void Solution::nextPermutation(vector<int>& nums) {
 		// Find from the smallest k such that nums[k - 1] < nums[k].
 		int k;
-		for (k = nums.size() - 1; k > 0 && nums[k - 1] >= nums[k]; k--);
+		for (k = (int)(nums.size() - 1); k > 0 && nums[k - 1] >= nums[k]; k--);
 
 		// k == 0 means the sequence itself is non-increasing. Reverse it.
 		if (k > 0) {
 			// Find the index i such that nums[i] > nums[k-1], i in [k, n-1].
 			int i;
-			for (i = nums.size() - 1; nums[i] <= nums[k - 1]; i--);
+			for (i = (int)(nums.size() - 1); nums[i] <= nums[k - 1]; i--);
 
 			swap(nums[k - 1], nums[i]);
 		}
@@ -6550,7 +6551,7 @@ return set<int>();
 
 	//32. Longest Valid Parentheses
 	int Solution::longestValidParentheses(string s) {
-		int res = 0, size = s.size();
+		int res = 0, size = (int)s.size();
 		// len[i] records the longest valid length at position i
 		vector<int> len(size, 0);
 		for (int i = 1; i < size; i++) {
@@ -6574,7 +6575,7 @@ return set<int>();
 	At last, the first place where its number is not right, return the place + 1.
 	*/
 	int Solution::firstMissingPositive(vector<int>& nums) {
-		int n = nums.size();
+		int n = (int)nums.size();
 		for (int i = 0; i < n;) {
 			if (nums[i] > 0 && nums[i] < n && nums[nums[i] - 1] != nums[i])
 				swap(nums[i], nums[nums[i] - 1]);
@@ -6628,7 +6629,7 @@ return set<int>();
 
 	//43. Multiply Strings 
 	string Solution::multiply(string num1, string num2) {
-		int m = num1.size(), n = num2.size(), pos = 0;
+		int m = (int)num1.size(), n = (int)num2.size(), pos = 0;
 		if (m == 0 || n == 0)
 			return "";
 		if ((m == 1 && num1[0] == '0') || (n == 1 && num2[0] == '0'))
@@ -6825,7 +6826,7 @@ return set<int>();
 		if (nums.empty())
 			return false;
 
-		int left = 0, right = nums.size() - 1;
+		int left = 0, right = (int)(nums.size() - 1);
 		while (left < right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] == target)
@@ -6949,7 +6950,7 @@ return set<int>();
 		if (obstacleGrid.empty() || obstacleGrid[0].empty())
 			return 0;
 
-		int m = obstacleGrid.size(), n = obstacleGrid[0].size();
+		int m = (int)obstacleGrid.size(), n = (int)obstacleGrid[0].size();
 		vector<vector<int>> dp(m, vector<int>(n, 0));
 		dp[0][0] = (obstacleGrid[0][0] == 1) ? 0 : 1;
 
@@ -6985,7 +6986,7 @@ return set<int>();
 	//93. Restore IP Addresses
 	vector<string> Solution::restoreIpAddresses(string s) {
 		vector<string> res;
-		int len = s.size();
+		int len = (int)s.size();
 		for (int i = 1; i < 4 && i < len - 2; i++)
 			for (int j = i + 1; j - i < 4 && j < len - 1; j++)
 				for (int k = j + 1; k - j < 4 && k < len; k++) {
@@ -7008,7 +7009,7 @@ return set<int>();
 		if (gas.empty() || cost.empty() || gas.size() > cost.size())
 			return 0;
 
-		int start = 0, gap = 0, tank = 0, n = gas.size();
+		int start = 0, gap = 0, tank = 0, n = (int)gas.size();
 		for (int i = 0; i < n; i++) {
 			tank += gas[i] - cost[i];
 			if (tank < 0) {
@@ -7128,7 +7129,7 @@ return set<int>();
 			return 0;
 
 		vector<int> minpath(triangle.back());
-		int layers = triangle.size();
+		int layers = (int)triangle.size();
 		for (int i = layers - 2; i >= 0; i--) {
 			for (int j = 0; j <= i; j++)
 				minpath[j] = min(minpath[j], minpath[j + 1]) + triangle[i][j];
@@ -7154,7 +7155,7 @@ return set<int>();
 			return;
 
 		SetBoarder(board, 'O', 'Y');
-		int m = board.size(), n = board[0].size();
+		int m = (int)board.size(), n = (int)board[0].size();
 		for (int i = 1; i < m - 1; i++) {
 			for (int j = 1; j < n - 1; j++) {
 				if (board[i][j] == 'O')
@@ -7182,7 +7183,7 @@ return set<int>();
 	}
 
 	void Solution::SetBoarder(vector<vector<char>> &board, char src, char dest) {
-		int m = board.size(), n = board[0].size();
+		int m = (int)board.size(), n = (int)board[0].size();
 		for (int i = 0; i < m; i++) {
 			if (board[i][0] == src)
 				SetDFS(board, i, 0, src, dest);
@@ -7414,7 +7415,7 @@ return set<int>();
 		for (int i = 1; i < n; i++) {
 			auto it = nextUglyNumbers.begin();
 			uglyNumbers[i] = it->first;
-			for (int size = nextUglyNumbers.size(); size > 0; size--) {
+			for (int size = (int)nextUglyNumbers.size(); size > 0; size--) {
 				if (it->first != uglyNumbers[i])
 					break;
 				it->second.first++;
